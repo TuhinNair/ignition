@@ -1,14 +1,19 @@
 [tool.poetry]
+authors = ["Tuhin Nair <tuhinnair444@gmail.com>"]
+description = "Developer automation"
 name = "ignition"
 version = "0.1.0"
-description = "Developer automation"
-authors = ["Tuhin Nair <tuhinnair444@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
 
 [tool.poetry.dev-dependencies]
+black = "^20.8b1"
+flake8 = "^3.9.0"
+
+[tool.poetry.scripts]
+ignition = "ignition.ignite:main"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
