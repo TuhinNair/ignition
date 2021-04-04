@@ -9,7 +9,7 @@ script:
   - poetry run unittest
 before_deploy:
   - poetry config repositories.testpypi https://test.pypi.org/legacy/
-  - poetry config pypi-token.testpypi $TESTPYPI_TOKEN
+  - poetry config http-basic.testpypi __token__ $TESTPYPI_TOKEN
   - poetry build
 deploy:
   provider: script
