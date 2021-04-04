@@ -13,6 +13,7 @@ flake8 = "^3.9.0"
 
 [tool.poetry.scripts]
 ignition = "ignition.ignite:main"
+unittest = "scripts:unittest"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
