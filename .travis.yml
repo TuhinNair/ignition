@@ -1,6 +1,8 @@
 language: python
 python:
   - 3.7
+cache:
+  pip: true
 before_install:
   - pip install poetry
 install:
@@ -17,3 +19,6 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
+    branch: master
+    python: 3.7
+  if: tag IS present
