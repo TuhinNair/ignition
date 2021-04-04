@@ -1,14 +1,10 @@
-from argparse import ArgumentParser
 from typing import Optional
+from . import parser
 
 
 def main():
-    parser = ArgumentParser("Ignition!")
-    parser.add_argument("input", help="invoke a hello world with 'hello'")
-    parser.add_argument("-n", "--name", dest="name")
-
-    args = parser.parse_args()
-
+    app = parser.Parser()
+    args = app.parse_args()
     output = valid_input(args.input, args.name)
 
     if output:
