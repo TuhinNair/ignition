@@ -9,6 +9,7 @@ install:
   - poetry install
 script:
   - poetry run unittest
+  - poetry run behave
 before_deploy:
   - poetry config repositories.testpypi https://test.pypi.org/legacy/
   - poetry config http-basic.testpypi __token__ $TESTPYPI_TOKEN
