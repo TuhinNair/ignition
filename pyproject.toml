@@ -8,12 +8,12 @@ version = "0.1.0"
 python = "^3.7"
 
 [tool.poetry.dev-dependencies]
+behave = "^1.2.6"
 black = "^20.8b1"
 flake8 = "^3.9.0"
-behave = "^1.2.6"
 
 [tool.poetry.scripts]
-ignition = "ignition.ignite:main"
+ignition = "ignition.main:main"
 unittest = "scripts:unittest"
 
 [build-system]
