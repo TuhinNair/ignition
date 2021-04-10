@@ -2,15 +2,23 @@ from argparse import ArgumentParser
 
 
 class Parser:
-    def __init__(self):
+    def __init__(self, apps):
+        self.apps = apps
         self.parser = ArgumentParser("Ignition")
-        self.parser.add_argument("input", help="invoke a hello world with 'hello'")
-        self.parser.add_argument(
-            "-n", "--name", dest="name", help="option to greet a specific name"
+        self.subparsers_handler = self.parser.add_subparsers(
+            dest="command", help="commands"
         )
+
+        for app in self.apps:
+            app.register_parser(self.register_subparser)
 
     def parse_args(self, args=None):
         return self.parser.parse_args(args)
 
     def print_help(self):
         self.parser.print_help()
+
+    def register_subparser(self, app_command, description=None, help=None):
+        return self.subparsers_handler.add_parser(
+            app_command, description=description, help=help
+        )
