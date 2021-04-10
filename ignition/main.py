@@ -1,12 +1,25 @@
 from ignition.toolchain.git import Git
+from ignition.toolchain.tool import Tool
 from .parser import Parser
-from .ignite import Ignite
+from ignition.app.ignite import Ignite
+from typing import List
+from ignition.app.app import App
 import sys
 
 
 def main():
-    git = Git()
-    ignite_app = Ignite([git])
-    app = Parser([ignite_app])
-    args = app.parse_args(sys.argv[1:])
+    apps = load_apps()
+    parser = Parser(apps)
+    args = parser.parse_args(sys.argv[1:])
     print(args)
+
+
+def load_apps() -> List[App]:
+    tools = load_tools()
+    ignite = Ignite(tools)
+    return [ignite]
+
+
+def load_tools() -> List[Tool]:
+    git = Git()
+    return [git]

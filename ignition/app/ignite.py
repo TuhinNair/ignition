@@ -1,8 +1,9 @@
 from ignition.toolchain.tool import Tool
+from .app import App
 from typing import List
 
 
-class Ignite:
+class Ignite(App):
     def __init__(self, tools: List[Tool]):
         self.tools = tools
 

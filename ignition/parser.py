@@ -1,8 +1,10 @@
 from argparse import ArgumentParser
+from typing import List
+from ignition.app.app import App
 
 
 class Parser:
-    def __init__(self, apps):
+    def __init__(self, apps: List[App]):
         self.apps = apps
         self.parser = ArgumentParser("Ignition")
         self.subparsers_handler = self.parser.add_subparsers(
