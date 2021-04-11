@@ -1,5 +1,7 @@
 from behave import *
 from scripts import run_cmd
+from pathlib import Path
+import os
 
 
 def ctx_resp_to_string(ctx_resp):
@@ -32,5 +34,7 @@ def step_impl(context):
 
 @then("the git commit template is configured")
 def step_impl(context):
+    path = Path("ignition/toolchain/git_template/ignition_default_git_commit.txt")
+    template_file = os.path.abspath(path)
     resp = ctx_resp_to_string(context.response)
-    assert "git.commit.template=ignition_default_git_commit.txt\n" in resp
+    assert f"git.commit.template={template_file}\n" in resp
