@@ -2,7 +2,7 @@
 authors = ["Tuhin Nair <tuhinnair444@gmail.com>"]
 description = "Developer automation"
 name = "ignition"
-version = "0.1.0"
+version = "0.2.0"
 
 [tool.poetry.dependencies]
 python = "^3.7"
