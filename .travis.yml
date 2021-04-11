@@ -22,4 +22,3 @@ deploy:
     tags: true
     branch: master
     python: 3.7
-  if: tag IS present
