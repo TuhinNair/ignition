@@ -1,4 +1,5 @@
 import abc
+from argparse import ArgumentParser
 
 
 class Tool(abc.ABC):
@@ -7,5 +8,9 @@ class Tool(abc.ABC):
         pass
 
     @abc.abstractmethod
-    def register_arguments(self, parser_handler):
+    def register_arguments(self, parser_handler: ArgumentParser):
+        pass
+
+    @abc.abstractmethod
+    def process(self, args):
         pass
