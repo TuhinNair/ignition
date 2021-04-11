@@ -84,4 +84,4 @@ class Git(Tool):
             print("error setting git config commit template")
 
     def load_default_template_path(self):
-        return Path("./git_template/ignition_default_git_commit.txt")
+        return Path("ignition/toolchain/git_template/ignition_default_git_commit.txt")
